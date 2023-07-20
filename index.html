@@ -11,12 +11,12 @@
             width: 100%;
         }
 
-        .email-logo {
+        .email-header {
             background-color: white;
             text-align: center
         }
 
-        .email-logo-img {
+        .email-header-logo {
             width: 134px; 
             height: 92.949px;
         }
@@ -33,6 +33,7 @@
         }
 
         .email-section-title-text {
+            padding: 0 64px 0 64px;
             font-family: 'Nunito';
             font-size: 36px;
             font-style: normal;
@@ -45,7 +46,6 @@
             display: inline-block;
             text-align: center;
             width: 100%;
-            flex-wrap: wrap;
             margin: 0 0 12px 0;
         }
 
@@ -68,54 +68,73 @@
             font-weight: 800;
         }
 
+        .email-footer {
+            text-align: center;
+            color: #000;
+            font-family: Nunito;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin: 24px 0 12px;
+        }
+        
+        .email-footer-social {
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+
+        .email-socialmedia {
+            margin: 12px;
+        }
+
     </style>
 </head>
 <body>
     <section>
         <table class="email-container">
-            <tr class="email-logo">
-                <td colspan="2">
-                    <img src="./src/assets/images/party.png" alt="logo" class="email-logo-img">
-                </td>
-            </tr>
-
-            <table class="email-section">
-                <tr  class="email-section-title">
-                    <td colspan="2">
-                        <h1  class="email-section-title-text">Innovate now with StartKidsUp!</h1>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="email-section-img">
-                        <img src="./src/assets/images/people.png" alt="logo" class="email-img">
-                        <img src="./src/assets/images/people2.png" alt="logo" class="email-img">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="email-section-description">
-                        <p>Teaching entrepreneurship to children have been done in the USA for many years to enhance their leadership, creativity and communication and a few years ago we started to have companies that do it in Spain.</p>
-                        <p>We are working on this activity for the Primary Education Stage.</p>
-                        <p><span class="email-description-bold">StartKidsUp</span> (from 6 to 12 years old): they create an entrepreneurial project enhancing their creativity, organization and communication.</p>
-                    </td>
-                </tr>
-
-            </table>
-            
-            <!-- <tr>
+            <tr class="email-header">
                 <td>
-                    <img src="./src/assets/images/people.png" alt="logo" style="width: 158px; height: 105px;">
+                    <img src="./src/assets/images/party.png" alt="logo" class="email-header-logo">
                 </td>
-                <td>
-                    <img src="./src/assets/images/people2.png" alt="logo" style="width: 158px; height: 105px;">
-                </td>
-                
             </tr>
             <tr>
-                
+                <td>
+                    <table class="email-section">
+                        <tr  class="email-section-title">
+                            <td colspan="2">
+                                <h1  class="email-section-title-text">Innovate now with StartKidsUp!</h1>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="email-section-img">
+                                <img src="./src/assets/images/people.png" alt="logo" class="email-img">
+                                <img src="./src/assets/images/people2.png" alt="logo" class="email-img">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="email-section-description">
+                                <p>Teaching entrepreneurship to children have been done in the USA for many years to enhance their leadership, creativity and communication and a few years ago we started to have companies that do it in Spain.</p>
+                                <p>We are working on this activity for the Primary Education Stage.</p>
+                                <p><span class="email-description-bold">StartKidsUp</span> (from 6 to 12 years old): they create an entrepreneurial project enhancing their creativity, organization and communication.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
             </tr>
             <tr>
-                
-            </tr> -->
+                <td>
+                    <p class="email-footer">Follow us in</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="email-footer-social">
+                    <img src="/src/assets/images/facebook.svg" alt="facebook" class="email-socialmedia">
+                    <img src="/src/assets/images/instagram.svg" alt="instagram" class="email-socialmedia">
+                    <img src="/src/assets/images/youtube.svg" alt="youtube" class="email-socialmedia">
+                </td>
+            </tr>
         </table>
     </section>
 </body>
