@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs');
 const app = express();
 const port = 3500;
 const nodemailer = require('nodemailer');
@@ -33,9 +34,7 @@ const transporter = nodemailer.createTransport({
 async function sendNewsletter() {
     try {
         //html email
-        const htmlContent = `
-        <h1>prueba</h1>
-    `;
+        const htmlContent = fs.readFileSync('index.html', 'utf8');
     // Configura el email
     const mailOptions = {
         from: 'frontend-developer22@outlook.com',
