@@ -4,6 +4,9 @@ const app = express();
 const port = 3500;
 const nodemailer = require('nodemailer');
 const config = require('../config')
+require('dotenv').config();
+
+
 
 // start server
 app.listen(port, () => {
@@ -26,8 +29,8 @@ async function sendNewsletter() {
         const htmlContent = fs.readFileSync('newsletter.html', 'utf8');
     // email options
     const mailOptions = {
-        from: 'frontend-developer22@outlook.com',
-        to: 'carolferreirobelenguer@gmail.com',
+        from: process.env.FROM_EMAIL,
+        to: process.env.TO_EMAIL,
         subject: 'Newsletter Semanal',
         html: htmlContent,
     };
