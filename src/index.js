@@ -3,6 +3,7 @@ const fs = require('fs');
 const app = express();
 const port = 3500;
 const nodemailer = require('nodemailer');
+const config = require('../config')
 
 // Iniciar el servidor
 app.listen(port, () => {
@@ -18,24 +19,12 @@ app.use((req, res, next) => {
     next();
 });
 
-const transporter = nodemailer.createTransport({
-    host: "smtp-mail.outlook.com", // hostname
-    secureConnection: false, // TLS requires secureConnection to be false
-    port: 587, // port for secure SMTP
-    auth: {
-        user: "frontend-developer22@outlook.com",
-        pass: "FrontendDeveloper"
-    },
-    tls: {
-        ciphers:'SSLv3'
-    }
-});
-
+const transporter = nodemailer.createTransport(config.email);
 async function sendNewsletter() {
     try {
         //html email
-        const htmlContent = fs.readFileSync('index.html', 'utf8');
-    // Configura el email
+        const htmlContent = fs.readFileSync('newsletter.html', 'utf8');
+    // email options
     const mailOptions = {
         from: 'frontend-developer22@outlook.com',
         to: 'carolferreirobelenguer@gmail.com',
