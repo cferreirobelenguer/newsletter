@@ -1,0 +1,14 @@
+.header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+    padding: 64px 0 64px 0;
+}
+
+.header-logo {
+    width: 134px; 
+    height: 92.949px;
+}

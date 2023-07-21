@@ -5,7 +5,7 @@ const port = 3500;
 const nodemailer = require('nodemailer');
 const config = require('../config')
 
-// Iniciar el servidor
+// start server
 app.listen(port, () => {
     console.log(`Servidor funcionando en http://localhost:${port}`);
 });
