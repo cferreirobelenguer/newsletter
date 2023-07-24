@@ -15,8 +15,21 @@ function Home() {
         if(formData) {
             setIsModalOpen(true);
             console.log(formData)
+            fetch('http://localhost:3500/send-email/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: formData }),
+            })
+            .then((response) => response.json())
+            .then((responseData) => {
+                console.log('server response:', responseData);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
         }
-        
     };
     //modal is close
     const handleModalClose = () => {
