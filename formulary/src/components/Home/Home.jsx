@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import '../Home/Home.css';
 import Modal from '../Modal/Modal';
+import axios from 'axios';
 
 function Home() {
     const [formData, setFormData] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [responseCorrect, setResponseCorrect] =useState(false);
     //data form
     const handleChange = (event) => {
         setFormData(event.target.value)
@@ -13,22 +15,20 @@ function Home() {
     //modal is open
     const handleModalOpen = () => {
         if(formData) {
-            setIsModalOpen(true);
-            console.log(formData)
-            fetch('http://localhost:3500/send-email/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email: formData }),
-            })
-            .then((response) => response.json())
-            .then((responseData) => {
-                console.log('server response:', responseData);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+            if (formData.includes('@')) {
+                fetch('http://localhost:3500/send-email/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: formData }),
+                })
+                
+                setIsModalOpen(true);
+            } else {
+                console.log('el dato no es válido')
+            }
+            
         }
     };
     //modal is close
