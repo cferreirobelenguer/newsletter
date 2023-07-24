@@ -1,6 +1,7 @@
 # Configuration newsletter
 proyect newsletter: nodeJS Express, React, html and css, responsive design mobile first
-Figma design free: https://www.figma.com/file/OElYkOcLLsNTKtpKk1Oq4b/StartKidsUp-Email-(Community)?type=design&node-id=2-16&mode=design
+
+### Figma design free: https://www.figma.com/file/OElYkOcLLsNTKtpKk1Oq4b/StartKidsUp-Email-(Community)?type=design&node-id=2-16&mode=design
 
 ## Email
 ![image](https://github.com/cferreirobelenguer/newsletter/assets/88061350/50312c4f-8808-4779-8f9a-a7f2c4a8190f)
