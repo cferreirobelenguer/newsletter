@@ -1,6 +1,5 @@
 # Configuration newsletter
-proyect newsletter: nodeJS Express, React, html and css
-Responsive design
+proyect newsletter: nodeJS Express, React, html and css, responsive design mobile first
 
 ## Email
 ![image](https://github.com/cferreirobelenguer/newsletter/assets/88061350/50312c4f-8808-4779-8f9a-a7f2c4a8190f)
