@@ -31,6 +31,7 @@ function Home() {
                 .catch((error) => {
                     console.error('Error:', error);
                 });
+                setIsModalOpen(true)
             } else {
                 console.log('el dato no es válido')
             }
