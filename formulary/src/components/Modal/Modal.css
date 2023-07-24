@@ -1,0 +1,50 @@
+/*Modal style*/
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    width: 50%;
+    height: auto;
+    background-color: black;
+    padding: 24px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+}
+
+.close-button {
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-weight: 600;
+    width: 100px;
+    height: 35px;
+    align-self: flex-end;
+    text-align: right;
+    font-size: 24px;
+}
+
+h2 {
+    margin: 0;
+}
+.modal-content {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap:24px;
+}

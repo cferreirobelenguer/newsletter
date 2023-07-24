@@ -13,10 +13,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    width: 100%;
 }
 
-home-input {
-    width: 30%;
+.home-input {
+    width: 65%;
     height: 30px;
 }
 
@@ -24,9 +25,15 @@ h1 {
     margin: 0;
 }
 .home-button {
-    width: 100px;
-    height: 21px;
+    width: 30%;
+    height: 35px;
     background-color: #000;
     color: white;
 
+}
+
+@media screen and (min-width: 600px) {
+    .home-form {
+        width: 50%;
+    }
 }
