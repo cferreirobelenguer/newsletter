@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../Home/Home.css';
 import Modal from '../Modal/Modal';
-import axios from 'axios';
 
 function Home() {
     const [formData, setFormData] = useState('');
