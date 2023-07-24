@@ -4,14 +4,14 @@ const app = express();
 const port = 3500;
 const nodemailer = require('nodemailer');
 const config = require('../config')
+var bodyParser = require('body-parser')
 require('dotenv').config();
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
 
-
-// start server
-app.listen(port, () => {
-    console.log(`Servidor funcionando en http://localhost:${port}`);
-});
+// parse application/json
+app.use(bodyParser.json())
 
 //CORS
 app.use((req, res, next) => {
@@ -22,24 +22,28 @@ app.use((req, res, next) => {
     next();
 });
 
-const transporter = nodemailer.createTransport(config.email);
-async function sendNewsletter() {
-    try {
-        //html email
-        const htmlContent = fs.readFileSync('newsletter.html', 'utf8');
-    // email options
-    const mailOptions = {
+app.post("/send-email/",(req,res)=>{
+    const {email} = req.body;
+    const transporter = nodemailer.createTransport(config.email);
+    const message = {
         from: process.env.FROM_EMAIL,
-        to: process.env.TO_EMAIL,
+        to: email,
         subject: 'Newsletter Semanal',
-        html: htmlContent,
+        html: fs.readFileSync('newsletter.html', 'utf8'),
     };
-      // send email
-        const info = await transporter.sendMail(mailOptions);
-            console.log('Email enviado:', info.messageId);
-        } catch (error) {
-            console.error('Error al enviar el email:', error);
+    transporter.sendMail(message, function(err, info) {
+        if (err) {
+            //if 500 o 400 error
+            console.log(err)
+        } else {
+            //if 200 message ok
+            console.log("email enviado correctamente");
+            console.log(info);
         }
-    }
+    });
+});
 
-    sendNewsletter();
+// start server
+app.listen(port, () => {
+    console.log(`Servidor funcionando en http://localhost:${port}`);
+});
