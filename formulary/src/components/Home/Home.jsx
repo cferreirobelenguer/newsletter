@@ -5,7 +5,6 @@ import Modal from '../Modal/Modal';
 function Home() {
     const [formData, setFormData] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [responseCorrect, setResponseCorrect] =useState(false);
     //data form
     const handleChange = (event) => {
         setFormData(event.target.value)
@@ -22,8 +21,16 @@ function Home() {
                     },
                     body: JSON.stringify({ email: formData }),
                 })
-                
-                setIsModalOpen(true);
+                .then((response) => {
+                    console.log(response)
+                    return response.json();
+                })
+                .then((responseData) => {
+                    console.log('server response:', responseData);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
             } else {
                 console.log('el dato no es válido')
             }
