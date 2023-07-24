@@ -8,7 +8,6 @@ Responsive design
 ## Formulary
 ![image](https://github.com/cferreirobelenguer/newsletter/assets/88061350/f04c32f7-1fbb-4137-a9eb-d86063afa50e)
 
-
-
+![image](https://github.com/cferreirobelenguer/newsletter/assets/88061350/d25c0de1-f89d-4d18-8984-1a3d5bc6f6f6)
 
 
