@@ -28,8 +28,8 @@ function Home() {
             <h1>Join our Newsletter!</h1>
             <p>If you're interested in the topics discussed in the article, you're algo going to love our newsletter! Join Now!</p>
             <div className="home-form">
-                    <input type="text" className="home-input" value={formData} name="email" onChange={(event) => handleChange(event)}/>
-                    <button className="home-button" onClick={handleModalOpen}>Join </button>
+                <input type="text" className="home-input" value={formData} name="email" onChange={(event) => handleChange(event)}/>
+                <button className="home-button" onClick={handleModalOpen}>Join </button>
             </div>
             <Modal isOpen={isModalOpen} onClose={handleModalClose}>
                 <h2>Thanks for Joining!</h2>
