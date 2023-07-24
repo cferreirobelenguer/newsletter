@@ -1,4 +1,4 @@
-# Configuration newsletter
+# Newsletter
 proyect newsletter: nodeJS Express, React, html and css, responsive design mobile first
 
 ## Email
